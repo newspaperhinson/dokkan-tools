@@ -14,3 +14,38 @@ model User {
   id        Int     @id @default(autoincrement())
   username  String  @unique
 }
+
+model Character {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  cards Card[]
+}
+
+model Card {
+  id Int @id @unique
+  character Character @relation(fields: [characterId], references: [id])
+  characterId Int
+  rarity Rarity
+  class Class?
+  type Type
+}
+
+enum Class {
+  SUPER   @map("SUPER")
+  EXTREME @map("EXTREME")
+}
+enum Type {
+  AGL @map("AGL")
+  TEQ @map("TEQ")
+  INT @map("INT")
+  STR @map("STR")
+  PHY @map("PHY")
+}
+enum Rarity {
+  N   @map("N")
+  R   @map("R")
+  SR  @map("SR")
+  SSR @map("SSR")
+  UR  @map("UR")
+  LR  @map("LR")
+}
