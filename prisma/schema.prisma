@@ -25,6 +25,7 @@ model Card {
   id Int @id @unique
   character Character @relation(fields: [characterId], references: [id])
   characterId Int
+  name String @unique
   rarity Rarity
   class Class?
   type Type
