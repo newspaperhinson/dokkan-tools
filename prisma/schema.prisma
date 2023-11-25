@@ -10,31 +10,59 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// App schemas
 model User {
-  id        Int     @id @default(autoincrement())
-  username  String  @unique
+  id       Int    @id @default(autoincrement())
+  username String @unique
 }
 
+// Game schemas
 model Character {
-  id    Int     @id @default(autoincrement())
-  name  String  @unique
+  id    Int    @id @default(autoincrement())
+  name  String @unique
   cards Card[]
 }
 
 model Card {
-  id Int @id @unique
-  character Character @relation(fields: [characterId], references: [id])
-  characterId Int
-  name String
-  rarity Rarity
-  class Class?
-  type Type
+  id                 Int                  @id @unique
+  character          Character            @relation(fields: [characterId], references: [id])
+  characterId        Int
+  name               String
+  rarity             Rarity
+  class              Class?
+  type               Type
+  UltimateClashEnemy UltimateClashEnemy[]
 }
 
+// Ultimate Clash schemas
+model UltimateClash {
+  session Int                  @id @unique
+  start   DateTime
+  end     DateTime
+  enemies UltimateClashEnemy[]
+}
+
+model UltimateClashEnemy {
+  id            Int           @id @default(autoincrement())
+  ultimateClash UltimateClash @relation(fields: [session], references: [session])
+  session       Int
+  level         Int
+  stage         Int
+  card          Card          @relation(fields: [cardId], references: [id])
+  cardId        Int
+  rarity        Rarity
+  class         Class?
+  type          Type
+
+  @@unique([session, level, stage])
+}
+
+// enums
 enum Class {
   SUPER   @map("SUPER")
   EXTREME @map("EXTREME")
 }
+
 enum Type {
   AGL @map("AGL")
   TEQ @map("TEQ")
@@ -42,6 +70,7 @@ enum Type {
   STR @map("STR")
   PHY @map("PHY")
 }
+
 enum Rarity {
   N   @map("N")
   R   @map("R")
