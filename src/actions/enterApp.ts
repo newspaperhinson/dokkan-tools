@@ -1,6 +1,6 @@
 "use server";
 
-import prisma from "@/services/prisma";
+import prisma from "@/libs/prisma";
 import { redirect } from "next/navigation";
 
 export default async function enterApp(formData: FormData): Promise<void> {
