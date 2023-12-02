@@ -54,7 +54,7 @@ model UltimateClashEnemy {
   class         Class?
   type          Type
 
-  @@unique([session, level, stage])
+  @@unique([session, cardId])
 }
 
 // enums
