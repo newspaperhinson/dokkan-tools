@@ -50,7 +50,6 @@ model UltimateClashEnemy {
   stage         Int
   card          Card          @relation(fields: [cardId], references: [id])
   cardId        Int
-  rarity        Rarity
   class         Class?
   type          Type
 
