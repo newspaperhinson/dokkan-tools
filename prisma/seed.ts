@@ -118,6 +118,7 @@ async function main() {
         character: {
           create: { name: card.character.name },
         },
+        class: card.class,
         rarity: card.rarity,
         type: card.type,
       }
