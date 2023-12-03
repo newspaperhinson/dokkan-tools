@@ -138,71 +138,71 @@ async function main() {
   const enemies: EnemySeed[] = [
     // Jaco
     {
-      stage: 1,
       level: 1,
+      stage: 1,
       class: "SUPER",
       type: "TEQ"
     },
     // Zarbon & Dodoria
     {
-      stage: 1,
-      level: 5,
+      level: 1,
+      stage: 5,
       class: "EXTREME",
       type: "AGL"
     },
     // Tenshinhan
     {
-      stage: 2,
-      level: 1,
+      level: 2,
+      stage: 1,
       class: "SUPER",
       type: "INT",
     },
     // Krillin
     {
-      stage: 2,
       level: 2,
+      stage: 2,
       class: "SUPER",
       type: "STR",
     },
     // Super Baby 1
     {
-      stage: 2,
-      level: 5,
+      level: 2,
+      stage: 5,
       class: "EXTREME",
       type: "PHY",
     },
     // Goku (Youth)
     {
-      stage: 3,
-      level: 1,
+      level: 3,
+      stage: 1,
       class: "SUPER",
       type: "AGL",
     },
     // Demon King Piccolo
     {
-      stage: 3,
-      level: 2,
+      level: 3,
+      stage: 2,
       class: "EXTREME",
       type: "INT",
     },
     // Piccolo
     {
-      stage: 3,
       level: 3,
+      stage: 3,
       class: "SUPER",
       type: "STR",
     },
     // Cell (1st Form)
     {
-      stage: 3,
-      level: 4,
+      level: 3,
+      stage: 4,
       class: "EXTREME",
       type: "PHY",
     },
     // Super Saiyan God SS Evolved Vegeta
     {
-      stage: 3,
-      level: 5,
+      level: 3,
+      stage: 5,
       class: "SUPER",
       type: "TEQ",
     },
