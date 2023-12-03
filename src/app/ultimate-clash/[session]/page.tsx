@@ -1,4 +1,5 @@
 import prisma from "@/libs/prisma";
+import CardIcon from "@/components/CardIcon";
 
 // generate params for all sessions
 export async function generateStaticParams() {
@@ -25,13 +26,14 @@ export default async function UltimateClashPage({ params }: { params: { session:
   });
 
   return (
-    <div>
+    <div className="text-center">
       {enemies.map((enemy, index) => (
         <div key={index}>
           <span>{enemy.cardId}</span>
           <span>{enemy.card.character.name}</span>
         </div>
       ))}
+      <CardIcon />
     </div>
   );
 };
