@@ -71,7 +71,7 @@ async function main() {
     },
     // Demon King Piccolo
     {
-      id: 1016631,
+      id: 1016630,
       name: "King of the Evil Realm",
       character: { name: "Demon King Piccolo" },
       rarity: "UR",
@@ -98,7 +98,7 @@ async function main() {
     },
     // Super Saiyan God SS Evolved Vegeta
     {
-      id: 1020341,
+      id: 1020340,
       name: "True Warrior Race",
       character: { name: "Super Saiyan God SS Evolved Vegeta" },
       rarity: "LR",
