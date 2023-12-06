@@ -14,7 +14,7 @@ interface CardIconProps {
 
 export default function CardIcon({ id, rarity, _class, type, hideRarity }: CardIconProps) {
   return (
-    <div className="relative aspect-square w-full">
+    <div className="relative aspect-square w-40">
       <Thumb
         id={id}
       />
