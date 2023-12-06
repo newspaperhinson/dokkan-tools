@@ -1,6 +1,11 @@
 import Image from "next/image";
+import { Rarity } from "@prisma/client";
 
-export default function Rarity() {
+interface RarityAssetProps {
+  rarity: Rarity;
+}
+
+export default function RarityAsset({ rarity }: RarityAssetProps) {
   return (
     <Image
       style={{
@@ -9,7 +14,7 @@ export default function Rarity() {
         left: "-0.13rem",
         zIndex: 20,
       }}
-      src={"/assets/global/card/thumb/rarity_LR.png"}
+      src={`/assets/global/card/thumb/rarity_${rarity}.png`}
       height={70}
       width={70}
       alt=""

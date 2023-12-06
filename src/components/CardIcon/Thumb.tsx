@@ -1,13 +1,17 @@
 import Image from "next/image";
 
-export default function Thumb() {
+interface ThumbProps {
+  id: number;
+}
+
+export default function Thumb({ id }: ThumbProps) {
   return (
     <Image
       style={{
         position: "absolute",
         zIndex: 10,
       }}
-      src={"/assets/global/card/thumb/card_1020340.png"}
+      src={`/assets/global/card/card_${id}_thumb.png`}
       height={150}
       width={150}
       alt=""
