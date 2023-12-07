@@ -22,6 +22,11 @@ export default async function enterApp(formData: FormData): Promise<void> {
     });
   }
 
+  // find the latest session of ultimate clash
+  const maxSession = await prisma.ultimateClash.aggregate({
+    _max: { session: true },
+  });
+
   // redirect to ultimate clash page
-  redirect("/ultimate-clash");
+  redirect(`/ultimate-clash/${maxSession._max.session}`);
 }
